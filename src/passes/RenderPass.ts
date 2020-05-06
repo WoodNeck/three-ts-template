@@ -3,6 +3,7 @@ import * as THREE from "three";
 import Pass from "./Pass";
 import Layer from "~/layers/Layer";
 
+// Basic rendering pass
 export default class RenderPass implements Pass {
 	private _layer: Layer;
 	private _renderToTexture: boolean;
