@@ -49744,6 +49744,7 @@ version: 1.0.0
         return Renderer;
     }());
 
+    // Basic rendering pass
     var RenderPass = /** @class */ (function () {
         function RenderPass(layer) {
             this._layer = layer;
@@ -49798,6 +49799,7 @@ version: 1.0.0
         return EntityManager;
     }());
 
+    // Layer that contains scene & camera
     var Layer = /** @class */ (function () {
         function Layer() {
             this.entityMananger = new EntityManager();
