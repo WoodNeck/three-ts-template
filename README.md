@@ -1,2 +1,3 @@
 # three-ts-template
-three.js + Typescript template for my own
+
+WebGL2 + three.js + Typescript template for my own.
