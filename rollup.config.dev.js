@@ -1,7 +1,16 @@
 const buildHelper = require("./config/build-helper");
-// const babel = require("rollup-plugin-babel");
-const liveServer = require("rollup-plugin-live-server");
 const glslify = require("rollup-plugin-glslify");
+const serve = require("rollup-plugin-serve");
+const livereload = require("rollup-plugin-livereload");
+
+const plugins = [
+	glslify(),
+  serve({
+		open: true,
+		contentBase: "web",
+	}),
+  livereload("web")
+];
 
 export default buildHelper([
   {
@@ -10,16 +19,6 @@ export default buildHelper([
     output: `./web/dist/app.js`,
     format: "umd",
     resolve: true,
-    plugins: [
-			glslify(),
-      liveServer({
-        port: 8001,
-        host: "0.0.0.0",
-        root: "web",
-        file: "index.html",
-        open: true,
-        wait: 500
-      }),
-    ]
+    plugins,
   }
 ]);
